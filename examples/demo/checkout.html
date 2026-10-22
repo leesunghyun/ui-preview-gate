@@ -26,26 +26,38 @@ main{padding:16px;display:flex;flex-direction:column;gap:12px}
 footer{position:fixed;left:0;right:0;bottom:0;padding:16px;background:#fff;border-top:1px solid #e5e7eb}
 footer button{width:100%;height:50px;border:0;border-radius:12px;background:#2563eb;color:#fff;font-size:16px;font-weight:700}
 </style>
-<header><span class="back">&#8249;</span><h1>Checkout</h1></header>
+<header><span class="back">&#8249;</span><h1 data-t="title">Checkout</h1></header>
 <main>
   <section class="card" id="items">
-    <h2>Your order</h2>
-    <div class="item"><div class="thumb" style="background:#fde68a"></div><div><div class="name">Ceramic mug</div><div class="sub">Qty 2</div></div><div class="price">$24.00</div></div>
-    <div class="item"><div class="thumb" style="background:#bfdbfe"></div><div><div class="name">Notebook, dotted</div><div class="sub">Qty 1</div></div><div class="price">$12.50</div></div>
+    <h2 data-t="order">Your order</h2>
+    <div class="item"><div class="thumb" style="background:#fde68a"></div><div><div class="name" data-t="mug">Ceramic mug</div><div class="sub" data-t="qty2">Qty 2</div></div><div class="price">$24.00</div></div>
+    <div class="item"><div class="thumb" style="background:#bfdbfe"></div><div><div class="name" data-t="notebook">Notebook, dotted</div><div class="sub" data-t="qty1">Qty 1</div></div><div class="price">$12.50</div></div>
   </section>
   <section class="card" id="summary">
-    <h2>Summary</h2>
-    <div class="promo" id="promo" data-show="after actual"><input placeholder="Promo code" value="WELCOME10"><button>Apply</button></div>
-    <div class="row"><span>Subtotal</span><span>$36.50</span></div>
-    <div class="row discount" id="discount" data-show="after actual"><span>Promo WELCOME10</span><span>-$3.65</span></div>
-    <div class="row" id="shipping" data-show="before after"><span>Shipping</span><span>$4.00</span></div>
-    <div class="row total" id="total"><span>Total</span><span class="amount" data-before="$40.50" data-after="$36.85" data-actual="$32.85"></span></div>
+    <h2 data-t="summary">Summary</h2>
+    <div class="promo" id="promo" data-show="after actual"><input placeholder="Promo code" value="WELCOME10"><button data-t="apply">Apply</button></div>
+    <div class="row"><span data-t="subtotal">Subtotal</span><span>$36.50</span></div>
+    <div class="row discount" id="discount" data-show="after actual"><span data-t="promo">Promo WELCOME10</span><span>-$3.65</span></div>
+    <div class="row" id="shipping" data-show="before after"><span data-t="shipping">Shipping</span><span>$4.00</span></div>
+    <div class="row total" id="total"><span data-t="total">Total</span><span class="amount" data-before="$40.50" data-after="$36.85" data-actual="$32.85"></span></div>
   </section>
 </main>
-<footer><button>Place order</button></footer>
+<footer><button data-t="place">Place order</button></footer>
 <script>
 // ?v=before | after | actual  (actual = implemented result with an accidental regression)
+// &lang=ko | ja  (default: English as written above)
 const v = new URLSearchParams(location.search).get('v') || 'before';
+const lang = new URLSearchParams(location.search).get('lang');
+const T = {
+  ko: { title: '결제', order: '주문 상품', mug: '세라믹 머그컵', qty2: '수량 2', notebook: '도트 노트', qty1: '수량 1',
+        summary: '결제 금액', apply: '적용', subtotal: '상품 금액', promo: '할인 WELCOME10', shipping: '배송비', total: '합계', place: '주문하기' },
+  ja: { title: 'お会計', order: 'ご注文内容', mug: 'セラミックマグ', qty2: '数量 2', notebook: 'ドット方眼ノート', qty1: '数量 1',
+        summary: 'お支払い金額', apply: '適用', subtotal: '小計', promo: 'クーポン WELCOME10', shipping: '送料', total: '合計', place: '注文を確定する' },
+}[lang];
+if (T) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = T[el.dataset.t]; });
+}
 document.querySelectorAll('[data-show]').forEach((el) => {
   if (!el.dataset.show.split(' ').includes(v)) el.remove();
 });
