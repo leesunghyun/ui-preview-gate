@@ -1,0 +1,25 @@
+{
+  "out": "verify.png",
+  "panels": [
+    {
+      "label": "Approved preview",
+      "tone": "after",
+      "image": "out/after.png",
+      "boxes": [
+        { "x": 33, "y": 321, "w": 309, "h": 42 },
+        { "x": 33, "y": 429, "w": 309, "h": 29, "tone": "neutral" }
+      ],
+      "note": "Approved: promo field added; shipping (gray) must not change"
+    },
+    {
+      "label": "Actual (implemented)",
+      "tone": "after",
+      "image": "out/actual.png",
+      "boxes": [
+        { "x": 33, "y": 321, "w": 309, "h": 42 },
+        { "x": 33, "y": 435, "w": 309, "h": 39, "tone": "mismatch" }
+      ],
+      "note": "Mismatch (amber): shipping row gone, total wrong - fix and re-verify"
+    }
+  ]
+}

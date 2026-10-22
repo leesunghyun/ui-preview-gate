@@ -1,0 +1,3 @@
+interface:
+  display_name: "UI Preview Gate"
+  short_description: "Preview UI changes as before/after images, then verify the result"

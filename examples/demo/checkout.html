@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout demo</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;background:#f6f7f9;color:#111827}
+header{display:flex;align-items:center;gap:12px;height:56px;padding:0 16px;background:#fff;border-bottom:1px solid #e5e7eb}
+header h1{font-size:18px;margin:0}
+header .back{font-size:22px;color:#374151}
+main{padding:16px;display:flex;flex-direction:column;gap:12px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px}
+.card h2{font-size:15px;margin:0 0 12px;color:#374151}
+.item{display:flex;gap:12px;align-items:center;padding:8px 0}
+.thumb{width:48px;height:48px;border-radius:10px;flex:none}
+.item .name{font-weight:600;font-size:15px}
+.item .sub{font-size:13px;color:#6b7280}
+.item .price{margin-left:auto;font-weight:600}
+.row{display:flex;justify-content:space-between;padding:6px 0;font-size:15px}
+.row.total{border-top:1px solid #e5e7eb;margin-top:6px;padding-top:12px;font-weight:700;font-size:17px}
+.promo{display:flex;gap:8px;margin-bottom:8px}
+.promo input{flex:1;height:42px;border:1px solid #d1d5db;border-radius:10px;padding:0 12px;font-size:15px}
+.promo button{height:42px;padding:0 16px;border:1px solid #111827;background:#fff;border-radius:10px;font-weight:600;font-size:15px}
+.discount{color:#16a34a}
+footer{position:fixed;left:0;right:0;bottom:0;padding:16px;background:#fff;border-top:1px solid #e5e7eb}
+footer button{width:100%;height:50px;border:0;border-radius:12px;background:#2563eb;color:#fff;font-size:16px;font-weight:700}
+</style>
+<header><span class="back">&#8249;</span><h1>Checkout</h1></header>
+<main>
+  <section class="card" id="items">
+    <h2>Your order</h2>
+    <div class="item"><div class="thumb" style="background:#fde68a"></div><div><div class="name">Ceramic mug</div><div class="sub">Qty 2</div></div><div class="price">$24.00</div></div>
+    <div class="item"><div class="thumb" style="background:#bfdbfe"></div><div><div class="name">Notebook, dotted</div><div class="sub">Qty 1</div></div><div class="price">$12.50</div></div>
+  </section>
+  <section class="card" id="summary">
+    <h2>Summary</h2>
+    <div class="promo" id="promo" data-show="after actual"><input placeholder="Promo code" value="WELCOME10"><button>Apply</button></div>
+    <div class="row"><span>Subtotal</span><span>$36.50</span></div>
+    <div class="row discount" id="discount" data-show="after actual"><span>Promo WELCOME10</span><span>-$3.65</span></div>
+    <div class="row" id="shipping" data-show="before after"><span>Shipping</span><span>$4.00</span></div>
+    <div class="row total" id="total"><span>Total</span><span class="amount" data-before="$40.50" data-after="$36.85" data-actual="$32.85"></span></div>
+  </section>
+</main>
+<footer><button>Place order</button></footer>
+<script>
+// ?v=before | after | actual  (actual = implemented result with an accidental regression)
+const v = new URLSearchParams(location.search).get('v') || 'before';
+document.querySelectorAll('[data-show]').forEach((el) => {
+  if (!el.dataset.show.split(' ').includes(v)) el.remove();
+});
+const amount = document.querySelector('.amount');
+amount.textContent = amount.dataset[v];
+</script>
+</html>

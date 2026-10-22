@@ -1,0 +1,27 @@
+{
+  "out": "preview.png",
+  "panels": [
+    {
+      "label": "Before (current)",
+      "tone": "before",
+      "image": "out/before.png",
+      "boxes": [
+        { "x": 33, "y": 312, "w": 309, "h": 6, "pad": 0 },
+        { "x": 33, "y": 347, "w": 309, "h": 6, "pad": 0 },
+        { "x": 33, "y": 385, "w": 309, "h": 39 }
+      ],
+      "note": "Insert points for promo field and discount line; total"
+    },
+    {
+      "label": "After (preview)",
+      "tone": "after",
+      "image": "out/after.png",
+      "boxes": [
+        { "x": 33, "y": 321, "w": 309, "h": 42 },
+        { "x": 33, "y": 400, "w": 309, "h": 29 },
+        { "x": 33, "y": 464, "w": 309, "h": 39 }
+      ],
+      "note": "Promo field, discount line, updated total"
+    }
+  ]
+}
