@@ -117,10 +117,10 @@ node ui-preview-gate/scripts/compose.mjs spec.json
 ```bash
 for v in before after actual; do
   node ui-preview-gate/scripts/capture.mjs \
-    --url "file://$PWD/examples/demo/checkout.html?v=$v" --out examples/out/$v.png
+    --url "file://$PWD/examples/demo/checkout.html?v=$v&lang=ko" --out examples/out/ko/$v.png
 done
-node ui-preview-gate/scripts/compose.mjs examples/preview.json
-node ui-preview-gate/scripts/compose.mjs examples/verify.json
+node ui-preview-gate/scripts/compose.mjs examples/preview.ko.json
+node ui-preview-gate/scripts/compose.mjs examples/verify.ko.json
 ```
 
 ## 라이선스

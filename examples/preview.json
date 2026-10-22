@@ -10,7 +10,7 @@
         { "x": 33, "y": 348.25, "w": 309, "h": 4, "pad": 0 },
         { "x": 33, "y": 385, "w": 309, "h": 39 }
       ],
-      "note": "Insert points for promo field and discount line; total"
+      "note": "Promo field and discount line go here; total changes"
     },
     {
       "label": "After (preview)",

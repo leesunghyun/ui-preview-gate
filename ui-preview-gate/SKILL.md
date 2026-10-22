@@ -1,6 +1,9 @@
 ---
 name: ui-preview-gate
 description: Use whenever a turn suggests, gives an opinion on, designs, or implements anything that changes what users see - new or changed screens, tabs, buttons, fields, layout, copy, or user-facing features - even when the user does not name this skill, even mid-conversation in a follow-up turn, and even when the change emerges from a support/CS, research, review, debugging, or audit conversation. This includes bug fixes whose fix changes what users see (e.g. an error sheet replaced by another) and lists or tables of proposed screen changes. Also use whenever before/after images, UI screenshots for approval, or mockups are requested. Approval gate for UI/UX and feature changes - inspect the real current screen and code, get explicit approval on a side-by-side before/after preview before coding, then verify the result against it. A text-only proposal or case table is not enough. Not for merely attaching screenshots to a finished PR, and not for backend-only or invisible changes.
+license: MIT
+metadata:
+  tags: "ui, ux, before-after, screenshots, approval, design-review, playwright"
 ---
 
 # UI Preview Gate
