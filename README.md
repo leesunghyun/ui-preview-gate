@@ -1,5 +1,7 @@
 # ui-preview-gate
 
+**English** | [한국어](README.ko.md) | [日本語](README.ja.md)
+
 An agent skill that gates UI changes with real before/after images.
 
 When you build a product with an AI agent, two questions are surprisingly hard
