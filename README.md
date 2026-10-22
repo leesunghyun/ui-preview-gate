@@ -2,9 +2,16 @@
 
 An agent skill that gates UI changes with real before/after images.
 
-Coding agents are quick to propose and ship UI changes from guesses. This skill
-makes the agent show the change before building it, then prove that what
-shipped matches what was approved.
+When you build a product with an AI agent, two questions are surprisingly hard
+to answer from text alone:
+
+- **"So what exactly are you going to change?"** - before it writes code
+- **"So what exactly did you change?"** - after it says "done"
+
+A paragraph of prose or a diff leaves you imagining the screen. This skill makes
+the agent answer both questions with pictures: it shows the change on the real
+screen before building it, then proves that what shipped matches what you
+approved.
 
 Most before/after skills document a change after it is made (screenshots for a
 PR). This one is a gate: the preview is approved *before* implementation, and
@@ -42,6 +49,12 @@ app - no cropped fragments, redrawn or generated mockups, or fake data. A user
 or project can explicitly choose `mockup-allowed` (for example in AGENTS.md or
 CLAUDE.md); mockup panels are then badged `MOCKUP` in the image. Verification
 (phase 4) always uses a real capture.
+
+![Before (real capture) / after (generated mockup)](examples/mockup.png)
+
+Under `mockup-allowed` the "after" side can be a design mockup (here generated
+from the real capture). The "before" side stays a real capture, so the reviewer
+still sees the exact screen that will change.
 
 ## Install
 
