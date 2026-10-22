@@ -42,8 +42,7 @@ try {
 
   const boxes = [];
   for (const selector of opts.selectors) {
-    const rects = await page.$$eval(
-      selector,
+    const rects = await page.locator(selector).evaluateAll(
       (els, fullPage) =>
         els.map((el) => {
           const r = el.getBoundingClientRect();

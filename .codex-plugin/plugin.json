@@ -1,0 +1,42 @@
+{
+  "name": "ui-preview-gate",
+  "version": "1.0.0",
+  "description": "Approval gate for UI changes: inspect the real screen, get approval on a side-by-side before/after image before coding, then verify the result against it.",
+  "author": {
+    "name": "leesunghyun",
+    "url": "https://github.com/leesunghyun"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/leesunghyun/ui-preview-gate",
+  "repository": "https://github.com/leesunghyun/ui-preview-gate",
+  "keywords": [
+    "ui",
+    "ux",
+    "before-after",
+    "screenshot",
+    "approval",
+    "design-review",
+    "codex-skills",
+    "claude-skills",
+    "agent-skills"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "UI Preview Gate",
+    "shortDescription": "Preview UI changes as before/after images, then verify the result",
+    "longDescription": "Before an agent changes a screen, it captures the real current screen, shows a side-by-side before/after image with red and green boxes, and waits for approval. After implementing, it captures the result and compares it with the approved preview.",
+    "developerName": "leesunghyun",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/leesunghyun/ui-preview-gate",
+    "defaultPrompt": [
+      "Add a coupon field to the checkout screen.",
+      "Show me how this settings tab would look with a new toggle.",
+      "Check that the shipped screen matches the approved preview."
+    ]
+  }
+}
