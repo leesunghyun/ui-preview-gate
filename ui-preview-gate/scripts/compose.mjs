@@ -84,7 +84,10 @@ async function panelHtml(panel, defaultWidth, baseDir, defaultPad, anyStaged) {
       const p = b.pad ?? pad;
       const left = b.x * scale - p;
       const top = b.y * scale - p;
-      return `<div class="box" style="left:${left}px;top:${top}px;width:${b.w * scale + 2 * p}px;height:${b.h * scale + 2 * p}px;border-color:${color}">${tag}</div>`;
+      const h = b.h * scale + 2 * p;
+      // Shorter than two borders: draw a solid bar of that height (insert-point line).
+      if (h < 8) return `<div class="bar" style="left:${left}px;top:${top}px;width:${b.w * scale + 2 * p}px;height:${h}px;background:${color}"></div>`;
+      return `<div class="box" style="left:${left}px;top:${top}px;width:${b.w * scale + 2 * p}px;height:${h}px;border-color:${color}">${tag}</div>`;
     })
     .join('');
   const src = await dataUri(path.resolve(baseDir, panel.image));
@@ -136,6 +139,7 @@ body{margin:0;background:#fff;font-family:-apple-system,"Segoe UI","Hiragino San
 .shot.mockup{border:3px dashed #6b7280}
 .mock{display:inline-block;vertical-align:middle;margin-left:8px;padding:3px 8px;border-radius:6px;background:#111827;color:#fff;font-size:13px;letter-spacing:.05em}
 .box{position:absolute;border:4px solid;border-radius:10px;box-sizing:border-box}
+.bar{position:absolute;border-radius:2px}
 .tag{position:absolute;top:-12px;left:6px;color:#fff;font-weight:700;font-size:12px;line-height:1;padding:3px 6px;border-radius:6px;white-space:nowrap}
 .note{font-size:14px;line-height:1.4;text-align:center;color:#333}
 </style><div id="sheet">${caption}<div id="row">${cols.join('')}</div></div>`;
