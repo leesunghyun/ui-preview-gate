@@ -37,7 +37,11 @@ phase 2 approval first.
   it will be.
 - While a UI change is awaiting approval or in progress, progress reports,
   option lists, and questions about it must also re-attach its before/after
-  image or give the image path. Never describe the changed screen in prose alone.
+  image. Never describe the changed screen in prose alone.
+- "Attach" means the image displays inline in the chat (e.g. Markdown
+  `![](/absolute/path.png)`). A bare file path is not enough. When the capture is
+  tall (a full mobile page), also embed a crop of the changed region so the text
+  stays readable at chat size.
 
 Skills are usually selected per turn from their description, so mid-conversation
 turns can be missed. `agent-instructions.md` next to this file is a short rule to

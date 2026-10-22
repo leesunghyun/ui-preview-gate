@@ -14,6 +14,8 @@
   before/after image in the same reply, or say why it cannot be made yet and when
   it will be.
 - While a UI change is awaiting approval or in progress, progress reports,
-  option lists, and questions about it also re-attach its before/after image or
-  give the image path. Never describe the changed screen in prose alone.
+  option lists, and questions about it also re-attach its before/after image.
+  Never describe the changed screen in prose alone.
+- Show images inline in the chat (e.g. Markdown `![](/absolute/path.png)`), not
+  as a bare file path. For tall captures, also embed a crop of the changed region.
 <!-- ui-preview-gate:end -->
