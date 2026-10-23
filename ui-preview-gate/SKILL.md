@@ -91,6 +91,9 @@ for open decisions instead of only listing questions.
 Before writing implementation code, show the approver one side-by-side image and
 a short summary, then wait for an explicit OK.
 
+If code or a PR for the change already exists, say so, do not merge it, and get
+approval on the before/after first. Merging counts as implementing.
+
 Image rules:
 
 - Before on the left, after on the right, in one image.
