@@ -40,6 +40,11 @@ phase 2 approval first.
   says "assess first" or lists the image as one item does not relax this.
 - Once started, keep following it in later turns until the approved change is
   verified (phase 4) or the user drops the change.
+- Exception: translation/localization only (copy moved into another language,
+  no layout or behavior change) needs no before/after image or prior approval.
+  Instead, confirm with an automated check that existing-language screens are
+  unchanged, and list the changed strings (before → after) in the PR. If layout
+  or behavior changes too, the exception does not apply (2026-10-26 Dave).
 - A proposal answered only in prose or a case table is incomplete. Attach the
   before/after image in the same reply, or say why it cannot be made yet and when
   it will be.
