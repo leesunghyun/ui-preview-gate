@@ -1,6 +1,6 @@
 ---
 name: ui-preview-gate
-description: Use whenever a turn suggests, gives an opinion on, designs, or implements anything that changes what users see - new or changed screens, tabs, buttons, fields, layout, copy, or user-facing features - even when the user does not name this skill, even mid-conversation in a follow-up turn, and even when the change emerges from a support/CS, research, review, debugging, or audit conversation. This includes bug fixes whose fix changes what users see (e.g. an error sheet replaced by another), lists or tables of proposed screen changes, and ideas for what to show users. Also use whenever before/after images, UI screenshots for approval, or mockups are requested. Approval gate for UI/UX and feature changes - inspect the real current screen and code, get explicit approval on a side-by-side before/after preview before coding, then verify the result against it. A text-only proposal or case table is not enough. Not for merely attaching screenshots to a finished PR, and not for backend-only or invisible changes.
+description: Use whenever a turn suggests, gives an opinion on, designs, or implements anything that changes what users see - new or changed screens, tabs, buttons, fields, layout, copy, or user-facing features, including LINE/chat message cards, push notifications, emails, and extension popups - even when the user does not name this skill, even mid-conversation in a follow-up turn, and even when the change emerges from a support/CS, research, review, debugging, or audit conversation. This includes bug fixes whose fix changes what users see (e.g. an error sheet replaced by another), lists or tables of proposed screen changes, "is it possible?" assessments, and ideas for what to show users. Also use whenever before/after images, UI screenshots for approval, or mockups are requested. Approval gate for UI/UX and feature changes - inspect the real current screen and code, get explicit approval on a side-by-side before/after preview before coding, then verify the result against it. A text-only proposal or case table is not enough. Not for merely attaching screenshots to a finished PR, and not for backend-only or invisible changes.
 license: MIT
 metadata:
   tags: "ui, ux, before-after, screenshots, approval, design-review, playwright"
@@ -30,6 +30,14 @@ phase 2 approval first.
   halfway through; from that turn on, this skill applies.
 - "What do you think?", "any ideas?", and "how would it look?" about a screen
   count as proposals.
+- "Is it possible?" and assessments count too when the recommendation changes
+  what users see. Surfaces outside the app count: LINE or other chat messages
+  and cards (e.g. Flex), push notifications, emails, and extension popups.
+- Never ask for a go-ahead, or for a pick between options, on a UI change before
+  its before/after image is in the same reply. If making the image needs a step
+  that itself needs approval (e.g. a test send), ask only for that step, and ask
+  about the change itself later, with the image. A brief from someone else that
+  says "assess first" or lists the image as one item does not relax this.
 - Once started, keep following it in later turns until the approved change is
   verified (phase 4) or the user drops the change.
 - A proposal answered only in prose or a case table is incomplete. Attach the
