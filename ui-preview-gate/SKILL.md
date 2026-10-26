@@ -39,7 +39,10 @@ phase 2 approval first.
   option lists, and questions about it must also re-attach its before/after
   image. Never describe the changed screen in prose alone.
 - "Attach" means the image displays inline in the chat (e.g. Markdown
-  `![](/absolute/path.png)`). A bare file path is not enough. When the capture is
+  `![](/absolute/path.png)`). A bare file path is not enough.
+  In the Claude desktop app, Markdown images may not render: also send every
+  preview/verification image with `SendUserFile` (`display: "render"`) in the
+  same turn so the approver actually sees it (2026-10-24 PO). When the capture is
   tall (a full mobile page), also embed a crop of the changed region so the text
   stays readable at chat size.
 
