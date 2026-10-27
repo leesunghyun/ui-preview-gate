@@ -26,7 +26,9 @@ Keep both messages short. Attach the image; do not describe what it already show
 
 **Proposed defaults for open decisions:** <decision> -> <proposal and reason>
 
-Reply OK to implement exactly this. Anything else needs a new preview.
+Reply **OK** to implement exactly this, or **Revise** with what to change.
+Other replies ("yes", "go ahead") are not approval. Anything not shown here
+needs a new preview.
 ```
 
 ## Verification report (phase 4)
