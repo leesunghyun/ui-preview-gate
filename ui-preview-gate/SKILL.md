@@ -118,8 +118,12 @@ branch, or merge.
 Ask for approval as a two-way choice only: **OK / Revise** (revise = say what
 to change). Do not offer "proceed / narrow scope / hold" style options, and
 never put the approval question in the same message as another question
-(deploy, merge, scope). "Yes", "proceed", "go ahead", or "all of them" is not
-OK: ask again with OK / Revise.
+(deploy, merge, scope). A direct affirmative answer to this approval question
+from the approver counts as OK, in any language (e.g. "Yes", Korean 「네」「응」
+「ㄱㄱ」「하세요」). Never ask them to re-answer with a specific word. Once the
+preview is approved and the result is verified, merging is not a new approval
+question; follow the project's merge rule instead of asking again
+(2026-10-27 Dave).
 
 If code or a PR for the change already exists, say so, do not merge it, and get
 approval on the before/after first. Merging counts as implementing.
