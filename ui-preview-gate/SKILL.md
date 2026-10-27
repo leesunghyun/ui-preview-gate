@@ -107,6 +107,12 @@ the approver's answer to that image. Until then, build only the prototype used
 for the after capture: do not implement for real, commit to the main work
 branch, or merge.
 
+Ask for approval as a two-way choice only: **OK / Revise** (revise = say what
+to change). Do not offer "proceed / narrow scope / hold" style options, and
+never put the approval question in the same message as another question
+(deploy, merge, scope). "Yes", "proceed", "go ahead", or "all of them" is not
+OK: ask again with OK / Revise.
+
 If code or a PR for the change already exists, say so, do not merge it, and get
 approval on the before/after first. Merging counts as implementing.
 
@@ -174,6 +180,11 @@ This includes small copy edits and fixes made in response to code review: if a
 fix changes what users see beyond the approved images, stop and get a new
 preview approved first. Reporting it afterwards in text does not count.
 Asking is not enough either: wait for the answer before committing or merging.
+
+After approval, any screen or copy change not in the approved preview (e.g. a
+stopped animation, a hidden item, changed numbers) needs its own before/after
+image of just that part, approved with OK, before it ships. A text note or an
+amber box in the phase 4 image does not replace this.
 
 ## 4. Verify against the approved preview
 
