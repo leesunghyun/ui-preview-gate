@@ -156,7 +156,7 @@ try {
 2. Both sides show the same state, scroll, and data; any unavoidable difference is in "caption".
 3. Every changed region is boxed on both sides at matching places.
 4. Screens the normal flow cannot reach are marked with "staged".
-5. Labels, notes, and caption use the approver's language only.
+5. Labels, notes, and caption use the screen's language only (the UI copy language, not the chat language).
 6. Verification: every amber box is a difference you re-captured and could not fix, boxed tightly.`);
 } finally {
   await browser.close();
