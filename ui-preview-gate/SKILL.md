@@ -213,8 +213,9 @@ instead of calling it done.
 ## Scripts
 
 Both scripts need Node 18+ and Playwright (`npm i -D playwright && npx playwright
-install chromium`). Set `PLAYWRIGHT_MODULE` to a module path to reuse an existing
-install.
+install chromium`). Without it they search `~/workspace` (or `PLAYWRIGHT_SEARCH_ROOTS`)
+for an install whose headless Chromium is already cached and use the newest one.
+Set `PLAYWRIGHT_MODULE` to force a specific install.
 
 Capture a screen and get box coordinates for elements:
 
