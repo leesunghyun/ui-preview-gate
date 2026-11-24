@@ -1,6 +1,6 @@
 ---
 name: ui-preview-gate
-description: Use whenever a turn suggests, gives an opinion on, designs, or implements anything that changes what users see - new or changed screens, tabs, buttons, fields, layout, copy, or user-facing features, including LINE/chat message cards, push notifications, emails, and extension popups - even when the user does not name this skill, even mid-conversation in a follow-up turn, and even when the change emerges from a support/CS, research, review, debugging, or audit conversation. This includes bug fixes whose fix changes what users see (e.g. an error sheet replaced by another), lists or tables of proposed screen changes, "is it possible?" assessments, and ideas for what to show users. Also use whenever before/after images, UI screenshots for approval, or mockups are requested. Approval gate for UI/UX and feature changes - inspect the real current screen and code, get explicit approval on a side-by-side before/after preview before coding, then verify the result against it. A text-only proposal or case table is not enough. Not for merely attaching screenshots to a finished PR, and not for backend-only or invisible changes.
+description: Use on any turn that proposes, assesses, designs, or implements a user-visible change, including follow-ups, copy, chat messages, notifications, email, and visible bug fixes. Use for UI mockups and before/after approval images. Inspect the real UI and code, obtain explicit approval of a side-by-side before/after image before coding, and verify the result.
 license: MIT
 metadata:
   tags: "ui, ux, before-after, screenshots, approval, design-review, playwright"
@@ -25,9 +25,12 @@ phase 2 approval first.
 ## When this applies
 
 - Apply it without being asked. Users should never have to name this skill.
-- Check every turn, not only the first. A conversation that started as support,
-  research, review, or a bug report often turns into "what if the screen did X?"
-  halfway through; from that turn on, this skill applies.
+- Check every turn, including follow-ups in support, research, review, debugging,
+  and audits. Proposals for screens, tabs, buttons, fields, layout, copy, or
+  other visible behavior count, including lists or tables of changes.
+- Use this workflow for UI mockups and before/after or approval screenshots.
+  Backend-only work and screenshots attached solely to document a finished PR
+  follow their regular review workflows.
 - "What do you think?", "any ideas?", and "how would it look?" about a screen
   count as proposals.
 - "Is it possible?" and assessments count too when the recommendation changes
